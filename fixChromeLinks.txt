@@ -1,0 +1,10 @@
+sudo nano ~/.local/share/applications/google-chrome.desktop 
+
+pen file: $HOME/.local/share/applications/google-chrome.desktop
+
+Find the line:
+
+Exec=/opt/google/chrome/chrome
+Add a space and %U:
+
+Exec=/opt/google/chrome/chrome %U
