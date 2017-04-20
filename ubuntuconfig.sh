@@ -32,18 +32,20 @@ sudo apt-get install -y terminator
 echo "terminator install complete"
 
 #Unity Tweak Tool
+echo "Adding the Unity Tweak Tool repository"
 sudo add-apt-repository -y ppa:freyja-dev/unity-tweak-tool-daily
-sudo apt-get update
+sudo apt-get update -qq
 sudo apt-get install -y unity-tweak-tool
 
 #Atom
+echo "Adding the Atom repository"
 sudo add-apt-repository -y ppa:webupd8team/atom
-sudo apt-get update
+sudo apt-get update -qq
 sudo apt-get install -y atom
 
 #install node, set permissions and globals (also httpie)
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -qy nodejs
 sudo chown -R $USER /usr/lib/node_modules/
 
 sudo pip install httpie
@@ -54,13 +56,20 @@ sudo npm i -g react-native-cli #surge webpack budo
 #Configure Settings
 ####################
 
+#Set Dash not to search the web
+gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
+
 #move the launcher to the bottom
+echo "move launcher to bottom..."
 gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 
 #remove useless shit
-sudo apt-get remove -y unity-webapps-common
+echo "Removing useless shit..."
+sudo apt-get remove -qy unity-webapps-common
 
 #Set the background to read from Variety
-sudo add-apt-repository -y ppa:peterlevi/ppa
-sudo apt-get update
-sudo apt-get install variety variety-slideshow
+echo "Installing Variety..."
+echo "Adding the Variety repository"
+sudo add-apt-repository  ppa:peterlevi/ppa -y
+sudo apt-get update -qq
+sudo apt-get install -qy variety variety-slideshow

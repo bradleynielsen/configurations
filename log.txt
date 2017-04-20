@@ -1,0 +1,22 @@
+npm ERR! Linux 4.4.0-72-generic
+npm ERR! argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "react"
+npm ERR! node v6.10.2
+npm ERR! npm  v3.10.10
+npm ERR! path /home/brad/.npm/react
+npm ERR! code EACCES
+npm ERR! errno -13
+npm ERR! syscall mkdir
+
+npm ERR! Error: EACCES: permission denied, mkdir '/home/brad/.npm/react'
+npm ERR!     at Error (native)
+npm ERR!  { Error: EACCES: permission denied, mkdir '/home/brad/.npm/react'
+npm ERR!     at Error (native)
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'mkdir',
+npm ERR!   path: '/home/brad/.npm/react' }
+npm ERR! 
+npm ERR! Please try running this command again as root/Administrator.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/brad/github/configurations/npm-debug.log
