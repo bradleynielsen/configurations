@@ -51,7 +51,9 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A1
 echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list &> install.log
 
 echo "Adding the virtualbox repository..."
-deb http://download.virtualbox.org/virtualbox/debian yakkety contrib-y >> install.log
+deb http://download.virtualbox.org/virtualbox/debian trusty contrib-y >> install.log
+sudo apt-key add oracle_vbox_2016.asc >> install.log
+sudo apt-key add oracle_vbox.asc >> install.log
 
 
 
@@ -111,6 +113,9 @@ sudo apt-get install httpie -y >> install.log
 echo "Installing mongo..."
 sudo apt-get install mongodb-org -y >> install.log
 
+echo "Installing Virtualbox..."
+sudo apt-get install virtualbox-5.1  -y >> install.log
+
 
 ###############
 #Node installs
@@ -122,7 +127,7 @@ echo "||  Installing Node  ||"
 echo "======================="
 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -qy nodejs >> out.log 2 >> err.log
+sudo apt-get install -qy nodejs
 sudo chown -R $USER /usr/lib/node_modules/
 
 
@@ -137,9 +142,13 @@ sudo npm i -gy yarn &> install.log
 
 
 
-######################
-#Configure OS Settings
-######################
+echo ######################
+echo #Configure OS Settings
+echo ######################
+
+echo "============================="
+echo "||  Configure OS Settings  ||"
+echo "============================="
 
 #Set Dash not to search the web
 echo "Set Dash not to search the web..."
