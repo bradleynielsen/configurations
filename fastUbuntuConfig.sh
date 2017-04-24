@@ -141,11 +141,6 @@ sudo npm i -gy nodemon  &> install.log
 sudo npm i -gy yarn &> install.log
 
 
-
-echo ######################
-echo #Configure OS Settings
-echo ######################
-
 echo "============================="
 echo "||  Configure OS Settings  ||"
 echo "============================="
