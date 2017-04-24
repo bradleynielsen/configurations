@@ -33,11 +33,11 @@ echo ""
 echo ""
 
 echo "Adding the Spotify repository..."
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886  &> install.log
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list &> install.log
 
 echo "Adding the Unity Tweak Tool repository..."
-sudo add-apt-repository -y ppa:freyja-dev/unity-tweak-tool-daily  -y > install.log
+sudo add-apt-repository -y ppa:freyja-dev/unity-tweak-tool-daily  -y >> install.log
 
 echo "Adding the Atom repository..."
 sudo add-apt-repository -y ppa:webupd8team/atom  -y >> install.log
@@ -46,11 +46,12 @@ echo "Adding the Variety repository..."
 sudo add-apt-repository  ppa:peterlevi/ppa -y >> install.log
 
 echo "Adding the Mongodb repository..."
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 &> install.log
 #ubuntu 14.04
-echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-# #ubuntu 16.04
-# echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list &> install.log
+
+echo "Adding the virtualbox repository..."
+deb http://download.virtualbox.org/virtualbox/debian yakkety contrib-y >> install.log
 
 
 
@@ -76,6 +77,9 @@ echo "==============================="
 echo "||   Install all the things  ||"
 echo "==============================="
 
+#gparted
+echo "Installing gparted..."
+sudo apt-get install gparted -y >> install.log
 
 #chrome
 echo "Installing Chrome..."
@@ -123,13 +127,13 @@ sudo chown -R $USER /usr/lib/node_modules/
 
 
 #mongo-hacker
-sudo npm i -gy mongo-hacker --loglevel silent
+sudo npm i -gy mongo-hacker  &> install.log
 #surge webpack budo
-sudo npm i -gy react-native-cli --loglevel silent
+sudo npm i -gy react-native-cli  &> install.log
 #nodemon
-sudo npm i -gy nodemon --loglevel silent
+sudo npm i -gy nodemon  &> install.log
 #yarn
-sudo npm i -gy yarn --loglevel silent
+sudo npm i -gy yarn &> install.log
 
 
 
