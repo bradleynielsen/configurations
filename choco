@@ -1,0 +1,9 @@
+choco install visualstudio-github nvidia-display-driver googlechrome-allusers sublimetext3 atom  windirstat chocolatey-core.extension 7zip.install nodejs.install git putty.install curl microsoft-build-tools gimp
+
+
+
+
+
+
+
+-y 
