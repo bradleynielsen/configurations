@@ -1,3 +1,6 @@
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+choco upgrade chocolatey
+choco install googlechrome   -y
 choco install windirstat  -y
 choco install chocolatey-core.extension  -y
 choco install curl  -y
@@ -10,16 +13,17 @@ choco install yarn -y
 choco install slack -y
 choco install cccp -y
 choco install openoffice -y
-rem choco install nvidia-display-driver -y
-rem choco install spotify  -y
-rem choco install visualstudio-github -y
-rem choco install microsoft-build-tools  -y
-rem choco install googlechrome-allusers -y
-rem choco install sublimetext3  -y
-rem choco install atom   -y
-rem choco install mongodb -y
-rem choco install 7zip  -y
-rem choco install nodejs -y
-rem choco install cmder  -y
-rem choco install git -y
-rem choco install putty -y
+choco install nvidia-display-driver -y
+choco install microsoft-build-tools  -y
+choco install googlechrome-allusers -y
+choco install sublimetext3  -y
+choco install atom   -y
+choco install mongodb -y
+choco install 7zip  -y
+choco install nodejs -y
+choco install cmder  -y
+choco install git -y
+choco install putty -y
+choco install python -y
+npm i -g nodemon webpack 
+pip install httpie
