@@ -1,6 +1,7 @@
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 choco upgrade chocolatey
-choco install malwarebytes -y
+choco install cccp -y
+choco install avirafreeantivirus -y
 choco install googlechrome-allusers -y
 choco install windirstat  -y
 choco install chocolatey-core.extension  -y
