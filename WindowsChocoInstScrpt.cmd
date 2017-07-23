@@ -24,5 +24,10 @@ choco install cmder  -y
 choco install git -y
 choco install putty -y
 choco install python -y
+choco install procexp -y
+choco install php -y
+choco install virtualbox -y
+choco install awscli -y
 npm i -g nodemon webpack 
-pip install httpie
+choco install pip  -y
+pip install httpie  
